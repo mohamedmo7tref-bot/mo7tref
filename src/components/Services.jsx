@@ -135,11 +135,11 @@ export default function Services() {
               e.stopPropagation();
               prevImage();
             }}
-            className="fixed right-6 top-1/2 -translate-y-1/2 z-50
+            className="cursor-pointer fixed right-6 top-1/2 -translate-y-1/2 z-50
             w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
             border border-white/20 text-white text-3xl
             flex items-center justify-center
-            hover:bg-green-500 transition"
+            hover:bg-white/25 transition"
           >
             <FaChevronRight />
           </button>
@@ -154,12 +154,8 @@ export default function Services() {
               onClick={(e) => e.stopPropagation()}
             />
 
-            {/* title */}
-            <div className="absolute bottom-8 right-10 bg-black/60 backdrop-blur-xl px-6 py-4 rounded-2xl border border-white/10">
-              <h3 className="text-white text-2xl font-black">
-                {services[selectedIndex].title}
-              </h3>
-            </div>
+           
+          
           </div>
 
           {/* LEFT */}
@@ -168,11 +164,11 @@ export default function Services() {
               e.stopPropagation();
               nextImage();
             }}
-            className="fixed left-6 top-1/2 -translate-y-1/2 z-50
+            className="cursor-pointer fixed left-6 top-1/2 -translate-y-1/2 z-50
             w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
             border border-white/20 text-white text-3xl
             flex items-center justify-center
-            hover:bg-green-500 transition"
+            hover:bg-white/25 transition"
           >
             <FaChevronLeft />
           </button>
