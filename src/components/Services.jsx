@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { FaChevronRight, FaChevronLeft, } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 import { FaArrowLeft } from "react-icons/fa6";
 
 export default function Services() {
   const [selectedIndex, setSelectedIndex] = useState(null);
+  const [touchStartX, setTouchStartX] = useState(null);
 
   const services = [
     {
@@ -50,13 +51,33 @@ export default function Services() {
     );
   };
 
+  // SWIPE START
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  // SWIPE END
+  const handleTouchEnd = (e) => {
+    if (touchStartX === null) return;
+
+    const endX = e.changedTouches[0].clientX;
+    const diff = touchStartX - endX;
+
+    if (diff > 50) {
+      nextImage(); // swipe left
+    } else if (diff < -50) {
+      prevImage(); // swipe right
+    }
+
+    setTouchStartX(null);
+  };
+
   return (
     <section
       id="services"
       dir="rtl"
       className="relative bg-slate-950 py-24 px-6 overflow-hidden"
     >
-
       {/* GRID */}
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
         {services.map((service, index) => (
@@ -70,10 +91,8 @@ export default function Services() {
             hover:-translate-y-4
             hover:shadow-[0_30px_80px_rgba(0,0,0,0.4)]"
           >
-            {/* top line */}
             <div className="absolute top-0 left-0 w-full h-1 bg-green-500 scale-x-0 group-hover:scale-x-100 transition origin-left"></div>
 
-            {/* IMAGE */}
             <div
               className="relative overflow-hidden cursor-pointer"
               onClick={() => setSelectedIndex(index)}
@@ -84,16 +103,13 @@ export default function Services() {
                 className="w-full h-72 object-cover group-hover:scale-110 transition duration-700"
               />
 
-              {/* overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent"></div>
 
-              {/* badge */}
-              <div className="hover:text-green-300 absolute top-5 right-5 bg-white/10 backdrop-blur-xl text-white px-4 py-2 rounded-full text-sm font-bold border border-white/20 shadow-[0_10px_30px_rgba(34,197,94,0.25)]">
+              <div className="absolute top-5 right-5 bg-white/10 backdrop-blur-xl text-white px-4 py-2 rounded-full text-sm font-bold border border-white/20 shadow-[0_10px_30px_rgba(34,197,94,0.25)]">
                 خدمة احترافية
               </div>
             </div>
 
-            {/* CONTENT */}
             <div className="p-8 text-center">
               <h3 className="text-2xl font-black mb-4 text-white">
                 {service.title}
@@ -115,7 +131,7 @@ export default function Services() {
               >
                 اطلب الخدمة الآن
                 <span className="group-hover/btn:translate-x-1 transition">
-                  <FaArrowLeft/>
+                  <FaArrowLeft />
                 </span>
               </a>
             </div>
@@ -128,12 +144,14 @@ export default function Services() {
         <div
           className="fixed inset-0 bg-black/98 backdrop-blur-2xl z-50 flex items-center justify-center"
           onClick={() => setSelectedIndex(null)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
-          {/* RIGHT */}
+          {/* NEXT */}
           <button
             onClick={(e) => {
               e.stopPropagation();
-              prevImage();
+              nextImage();
             }}
             className="cursor-pointer fixed right-6 top-1/2 -translate-y-1/2 z-50
             w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
@@ -153,16 +171,13 @@ export default function Services() {
               shadow-[0_40px_120px_rgba(0,0,0,0.8)]"
               onClick={(e) => e.stopPropagation()}
             />
-
-           
-          
           </div>
 
-          {/* LEFT */}
+          {/* PREV */}
           <button
             onClick={(e) => {
               e.stopPropagation();
-              nextImage();
+              prevImage();
             }}
             className="cursor-pointer fixed left-6 top-1/2 -translate-y-1/2 z-50
             w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
