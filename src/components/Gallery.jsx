@@ -54,9 +54,7 @@ export default function Gallery() {
               <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/10 to-transparent opacity-60 group-hover:opacity-100 transition"></div>
 
               {/* hover text */}
-              <div className="absolute bottom-5 right-5 text-white font-bold text-lg opacity-0 group-hover:opacity-100 transition">
-                عرض الصورة
-              </div>
+          
             </div>
           ))}
         </div>

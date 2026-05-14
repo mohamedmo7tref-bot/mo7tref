@@ -1,5 +1,10 @@
 import React, { useState } from "react";
-import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import {
+  FaPhone,
+  FaWhatsapp,
+  FaFacebookF,
+  FaFacebookMessenger,
+} from "react-icons/fa";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -14,7 +19,7 @@ export default function Contact() {
 👤 الاسم: ${name}
 📞 الهاتف: ${phone}
 🔧 الجهاز: ${device}
-📝 الوصف: ${message}
+📝 العطل : ${message}
     `;
 
     window.open(
@@ -41,44 +46,84 @@ export default function Contact() {
             تواصل معنا
           </p>
 
-          <h2 className="text-5xl font-black mt-5 leading-tight">
+          <h2 className="text-5xl font-black mt-3 leading-tight">
             احجز صيانة في <span className="text-green-400">دقيقة</span>
           </h2>
 
-          <p className="text-slate-300 mt-6 leading-8">
+          <p className="text-slate-300 mt-0 leading-8">
             نرد عليك فورًا ونوفر لك أقرب فني في منطقتك داخل الزقازيق.
           </p>
 
-          <div className="mt-10 space-y-5">
+<div className="mt-6 space-y-4">
 
-            <a
-              href="tel:01022699990"
-              className="flex items-center gap-5 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:bg-white/10 hover:scale-[1.02] transition"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-green-500 flex items-center justify-center text-xl">
-                <FaPhone />
-              </div>
-              <div>
-                <p className="text-slate-400 text-sm">اتصل الآن</p>
-                <h3 className="text-xl font-black">01022699990</h3>
-              </div>
-            </a>
+  {/* PHONE */}
+  <a
+    href="tel:01022699990"
+    className="group flex items-center gap-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl px-5 py-4 hover:bg-white/15 hover:scale-[1.02] transition duration-300"
+  >
+    <div className="w-12 h-12 rounded-2xl bg-green-500 flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition">
+      <FaPhone />
+    </div>
 
-            <a
-              href="https://wa.me/201022699990"
-              target="_blank"
-              className="flex items-center gap-5 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-6 hover:bg-white/10 hover:scale-[1.02] transition"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-green-500 flex items-center justify-center text-xl">
-                <FaWhatsapp />
-              </div>
-              <div>
-                <p className="text-slate-400 text-sm">واتساب</p>
-                <h3 className="text-xl font-black">ابدأ المحادثة</h3>
-              </div>
-            </a>
+    <div>
+      <p className="text-slate-400 text-xs"> Call now</p>
+      <h3 className="text-lg font-black">01022699990</h3>
+    </div>
+  </a>
 
-          </div>
+  {/* WHATSAPP */}
+  <a
+    href="https://wa.me/201022699990"
+    target="_blank"
+    rel="noreferrer"
+    className="group flex items-center gap-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl px-5 py-4 hover:bg-green-500/25 hover:scale-[1.02] transition duration-300"
+  >
+    <div className="w-12 h-12 rounded-2xl bg-green-500 flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition">
+      <FaWhatsapp />
+    </div>
+
+    <div>
+      <p className="text-slate-400 text-xs">Whatsapp</p>
+      <h3 className="text-lg font-black">ابدأ المحادثة</h3>
+    </div>
+  </a>
+
+  {/* FACEBOOK */}
+  <a
+    href="https://facebook.com/mo7tref.2022"
+    target="_blank"
+    rel="noreferrer"
+    className="group flex items-center gap-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl px-5 py-4 hover:bg-blue-500/20 hover:border-blue-500/30 hover:scale-[1.02] transition duration-300"
+  >
+    <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition">
+      <FaFacebookF />
+    </div>
+
+    <div>
+      <p className="text-slate-400 text-xs">Facebook</p>
+      <h3 className="text-lg font-black">تابع صفحتنا</h3>
+    </div>
+  </a>
+
+  {/* MESSENGER */}
+  <a
+    href="https://m.me/mo7tref.2022"
+    target="_blank"
+    rel="noreferrer"
+    className="group flex items-center gap-4 bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl px-5 py-4 hover:bg-sky-500/20 hover:border-sky-500/30 hover:scale-[1.02] transition duration-300"
+  >
+    <div className="w-12 h-12 rounded-2xl bg-sky-500 flex items-center justify-center text-lg shadow-lg group-hover:scale-110 transition">
+      <FaFacebookMessenger />
+    </div>
+
+    <div>
+      <p className="text-slate-400 text-xs">Messenger</p>
+      <h3 className="text-lg font-black">راسلنا مباشرة</h3>
+    </div>
+  </a>
+
+</div>
+
         </div>
 
         {/* FORM */}
@@ -86,7 +131,7 @@ export default function Contact() {
 
           <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-[40px] p-10 shadow-[0_30px_120px_rgba(0,0,0,0.6)]">
 
-            <h3 className="text-3xl font-black mb-8">
+            <h3 className="text-3xl font-black mb-6">
               أرسل طلبك الآن
             </h3>
 
@@ -113,9 +158,12 @@ export default function Contact() {
               >
                 <option>نوع الجهاز</option>
                 <option>ثلاجة</option>
-                <option>غسالة</option>
-                <option>تكييف</option>
                 <option>ديب فريزر</option>
+                <option>تكييف</option>
+                <option>مبرد</option>
+                <option>غسالةاوتوماتيك</option>
+                <option>غسالة فوق اوتوماتيك</option>
+                <option> غسالةأطباق</option>
               </select>
 
               <textarea

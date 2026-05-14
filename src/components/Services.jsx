@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { FaChevronRight, FaChevronLeft, } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa6";
 
 export default function Services() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -55,7 +56,6 @@ export default function Services() {
       dir="rtl"
       className="relative bg-slate-950 py-24 px-6 overflow-hidden"
     >
- 
 
       {/* GRID */}
       <div className="relative max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -88,7 +88,7 @@ export default function Services() {
               <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/10 to-transparent"></div>
 
               {/* badge */}
-              <div className="absolute top-5 right-5 bg-white/10 backdrop-blur-xl text-white px-4 py-2 rounded-full text-sm font-bold border border-white/20 shadow-[0_10px_30px_rgba(34,197,94,0.25)]">
+              <div className="hover:text-green-300 absolute top-5 right-5 bg-white/10 backdrop-blur-xl text-white px-4 py-2 rounded-full text-sm font-bold border border-white/20 shadow-[0_10px_30px_rgba(34,197,94,0.25)]">
                 خدمة احترافية
               </div>
             </div>
@@ -115,7 +115,7 @@ export default function Services() {
               >
                 اطلب الخدمة الآن
                 <span className="group-hover/btn:translate-x-1 transition">
-                  ←
+                  <FaArrowLeft/>
                 </span>
               </a>
             </div>

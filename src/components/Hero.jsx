@@ -1,5 +1,10 @@
 import React from "react";
-import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import {
+  FaPhone,
+  FaWhatsapp,
+  FaFacebookF,
+  FaFacebookMessenger,
+} from "react-icons/fa";
 
 export default function Hero() {
   return (
@@ -29,40 +34,153 @@ export default function Hero() {
             🔧 مركز صيانة احترافي داخل الزقازيق
           </div>
 
-          <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight mb-8">
+          <h1 className="text-5xl lg:text-7xl font-black text-white leading-tight mb-6">
             مركز المحترف
             <span className="block text-green-400 mt-4 text-4xl lg:text-5xl">
               لصيانة الأجهزة المنزلية
             </span>
           </h1>
 
-          <p className="text-slate-300 text-lg leading-9 mb-10 max-w-2xl">
+          <p className="text-slate-300 text-lg leading-9 mb-8 max-w-2xl">
             صيانة الثلاجات والغسالات والتكييفات والديب فريزر بأعلى جودة وأسرع
             خدمة داخل الزقازيق مع ضمان على جميع الإصلاحات.
           </p>
 
-          {/* BUTTONS */}
-          <div className="flex flex-wrap gap-5 mb-10">
-            <a
-              href="tel:01022699990"
-              className="flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-green-400
-              bg-white/5 border border-white/10 backdrop-blur-xl
-              hover:bg-white/10 hover:scale-105 transition"
-            >
-              <FaPhone className="text-lg" />
-              اتصل الآن
-            </a>
 
-            <a
-              href="https://wa.me/201022699990"
-              target="_blank"
-              className="flex items-center gap-3 px-8 py-4 rounded-2xl font-bold text-white
-              bg-green-500 hover:bg-green-600 hover:scale-105 transition shadow-lg"
-            >
-              <FaWhatsapp className="text-lg" />
-              واتساب مباشر
-            </a>
-          </div>
+
+{/* BUTTONS GRID - FOOTER STYLE */}
+<div className="grid sm:grid-cols-2 gap-3 mb-8">
+
+  {/* CALL */}
+  <a
+    href="tel:01022699990"
+    className="group flex items-center gap-3
+    px-4 py-3 rounded-xl
+    bg-white/5 border border-white/10
+    backdrop-blur-xl
+    hover:bg-white/10 hover:-translate-y-0.5
+    transition duration-300"
+  >
+    <div
+      className="w-9 h-9 rounded-lg
+      bg-green-500/10 border border-green-500/20
+      flex items-center justify-center
+      text-green-400 text-sm"
+    >
+      <FaPhone />
+    </div>
+
+    <div>
+      <p className="text-slate-500 text-xs">
+        اتصال مباشر
+      </p>
+
+      <h3 className="text-white font-semibold text-base">
+        Call now
+      </h3>
+    </div>
+  </a>
+
+  {/* WHATSAPP */}
+  <a
+    href="https://wa.me/201022699990"
+    target="_blank"
+    rel="noreferrer"
+    className="group flex items-center gap-3
+    px-4 py-3 rounded-xl
+    bg-white/5 border border-white/10
+    backdrop-blur-xl
+    hover:bg-green-500/10
+    hover:-translate-y-0.5
+    transition duration-300"
+  >
+    <div
+      className="w-9 h-9 rounded-lg
+      bg-green-500/10 border border-green-500/20
+      flex items-center justify-center
+      text-green-400 text-sm"
+    >
+      <FaWhatsapp />
+    </div>
+
+    <div>
+      <p className="text-slate-500 text-xs">
+        تواصل سريع
+      </p>
+
+      <h3 className="text-white font-semibold text-base">
+        WhatsApp
+      </h3>
+    </div>
+  </a>
+
+  {/* FACEBOOK */}
+  <a
+    href="https://facebook.com/mo7tref.2022"
+    target="_blank"
+    rel="noreferrer"
+    className="group flex items-center gap-3
+    px-4 py-3 rounded-xl
+    bg-white/5 border border-white/10
+    backdrop-blur-xl
+    hover:bg-blue-500/10
+    hover:-translate-y-0.5
+    transition duration-300"
+  >
+    <div
+      className="w-9 h-9 rounded-lg
+      bg-blue-500/10 border border-blue-500/20
+      flex items-center justify-center
+      text-blue-400 text-sm"
+    >
+      <FaFacebookF />
+    </div>
+
+    <div>
+      <p className="text-slate-500 text-xs">
+        صفحتنا
+      </p>
+
+      <h3 className="text-white font-semibold text-base">
+        Facebook
+      </h3>
+    </div>
+  </a>
+
+  {/* MESSENGER */}
+  <a
+    href="https://m.me/mo7tref.2022"
+    target="_blank"
+    rel="noreferrer"
+    className="group flex items-center gap-3
+    px-4 py-3 rounded-xl
+    bg-white/5 border border-white/10
+    backdrop-blur-xl
+    hover:bg-sky-500/10
+    hover:-translate-y-0.5
+    transition duration-300"
+  >
+    <div
+      className="w-9 h-9 rounded-lg
+      bg-sky-500/10 border border-sky-500/20
+      flex items-center justify-center
+      text-sky-400 text-sm"
+    >
+      <FaFacebookMessenger />
+    </div>
+
+    <div>
+      <p className="text-slate-500 text-xs">
+        راسلنا
+      </p>
+
+      <h3 className="text-white font-semibold text-base">
+        Messenger
+      </h3>
+    </div>
+  </a>
+
+</div>
 
           {/* FEATURES */}
           <div className="flex flex-wrap gap-3 text-slate-300">
