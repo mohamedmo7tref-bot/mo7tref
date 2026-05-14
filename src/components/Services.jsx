@@ -139,56 +139,58 @@ export default function Services() {
         ))}
       </div>
 
-      {/* MODAL */}
-      {selectedIndex !== null && (
-        <div
-          className="fixed inset-0 bg-black/98 backdrop-blur-2xl z-50 flex items-center justify-center"
-          onClick={() => setSelectedIndex(null)}
-          onTouchStart={handleTouchStart}
-          onTouchEnd={handleTouchEnd}
-        >
-          {/* NEXT */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              nextImage();
-            }}
-            className="cursor-pointer fixed right-6 top-1/2 -translate-y-1/2 z-50
-            w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
-            border border-white/20 text-white text-3xl
-            flex items-center justify-center
-            hover:bg-white/25 transition"
-          >
-            <FaChevronRight />
-          </button>
+ {/* MODAL */}
+{selectedIndex !== null && (
+  <div
+    className="fixed inset-0 bg-black/98 backdrop-blur-2xl z-50 flex items-center justify-center"
+    onClick={() => setSelectedIndex(null)}
+    onTouchStart={handleTouchStart}
+    onTouchEnd={handleTouchEnd}
+  >
 
-          {/* IMAGE */}
-          <div className="relative z-50 max-w-6xl w-full px-6">
-            <img
-              src={services[selectedIndex].image}
-              alt=""
-              className="w-full max-h-[90vh] object-contain rounded-[40px]
-              shadow-[0_40px_120px_rgba(0,0,0,0.8)]"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </div>
+    {/* NEXT (hidden on mobile) */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        nextImage();
+      }}
+      className="hidden md:flex cursor-pointer fixed right-6 top-1/2 -translate-y-1/2 z-50
+      w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
+      border border-white/20 text-white text-3xl
+      items-center justify-center
+      hover:bg-white/25 transition"
+    >
+      <FaChevronRight />
+    </button>
 
-          {/* PREV */}
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              prevImage();
-            }}
-            className="cursor-pointer fixed left-6 top-1/2 -translate-y-1/2 z-50
-            w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
-            border border-white/20 text-white text-3xl
-            flex items-center justify-center
-            hover:bg-white/25 transition"
-          >
-            <FaChevronLeft />
-          </button>
-        </div>
-      )}
+    {/* IMAGE */}
+    <div className="relative z-50 max-w-6xl w-full px-6">
+      <img
+        src={services[selectedIndex].image}
+        alt=""
+        className="w-full max-h-[90vh] object-contain rounded-[40px]
+        shadow-[0_40px_120px_rgba(0,0,0,0.8)]"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+
+    {/* PREV (hidden on mobile) */}
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        prevImage();
+      }}
+      className="hidden md:flex cursor-pointer fixed left-6 top-1/2 -translate-y-1/2 z-50
+      w-16 h-16 rounded-full bg-white/10 backdrop-blur-xl
+      border border-white/20 text-white text-3xl
+      items-center justify-center
+      hover:bg-white/25 transition"
+    >
+      <FaChevronLeft />
+    </button>
+
+  </div>
+)}
     </section>
   );
 }
