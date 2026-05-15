@@ -5,3 +5,7 @@
 html {
   scroll-behavior: smooth;
 }
+
+html, body, .transition-theme {
+  transition: background-color 700ms ease, color 700ms ease, border-color 700ms ease;
+}

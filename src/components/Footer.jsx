@@ -28,9 +28,7 @@ export default function Footer() {
       dir="rtl"
       className="relative bg-slate-950 text-slate-400 py-16 border-t border-white/10 overflow-hidden"
     >
-      {/* GLOW */}
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-125 h-125 bg-green-500/10 blur-[140px] rounded-full"></div>
-
+    
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
 
